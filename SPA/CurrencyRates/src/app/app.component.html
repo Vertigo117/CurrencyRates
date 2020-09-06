@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="date">Select Date</label>
+      <select class="form-control" name="date" (change)="onDateChange($event)">
+        <option [value]="date.id" *ngFor="let date of dates">{{ date.name }}</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="currency">Select Currency</label>
+      <select name="currency" class="form-control" (change)="onCurrencyChange($event)">
+        <option [value]="currency.id" *ngFor="let currency of currencies">{{ currency.name }}</option>
+      </select>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="card bg-dark text-center">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Czech Crown Rate</h5>
+          <p class="card-text">{{ printedText }}</p>
+        </div>
+        <div class="card-footer text-muted">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
